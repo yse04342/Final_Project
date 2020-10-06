@@ -1,0 +1,839 @@
+###############################################################################
+#
+# IAR ELF Linker V8.20.1.14183/W32 for ARM                06/Oct/2020  15:38:08
+# Copyright 2007-2017 IAR Systems AB.
+#
+#    Output file  =  E:\test\Debug\Exe\test.out
+#    Map file     =  E:\test\Debug\List\test.map
+#    Command line =  
+#        -f C:\Users\damoi\AppData\Local\Temp\EW29C.tmp
+#        (E:\test\Debug\Obj\FOD_Cleaner.o
+#        E:\test\Debug\Obj\Gulim10_8x16_ASCII.o
+#        E:\test\Debug\Obj\Gulim20_16x34_ASCII.o
+#        E:\test\Debug\Obj\Gulim28_24x48_ASCII.o
+#        E:\test\Debug\Obj\Gulim7_6x10_ASCII.o
+#        E:\test\Debug\Obj\Gulim8_8x12_ASCII.o
+#        E:\test\Debug\Obj\startup_stm32f40_41xxx.o
+#        E:\test\Debug\Obj\stm32f4xx_dma.o E:\test\Debug\Obj\stm32f4xx_fsmc.o
+#        E:\test\Debug\Obj\stm32f4xx_gpio.o E:\test\Debug\Obj\stm32f4xx_i2c.o
+#        E:\test\Debug\Obj\stm32f4xx_rcc.o E:\test\Debug\Obj\stm32f4xx_spi.o
+#        E:\test\Debug\Obj\stm32f4xx_usart.o
+#        E:\test\Debug\Obj\system_stm32f4xx.o
+#        E:\test\Debug\Obj\tm_stm32f4_dma.o
+#        E:\test\Debug\Obj\tm_stm32f4_fonts.o
+#        E:\test\Debug\Obj\tm_stm32f4_gpio.o
+#        E:\test\Debug\Obj\tm_stm32f4_ili9341.o
+#        E:\test\Debug\Obj\tm_stm32f4_spi.o
+#        E:\test\Debug\Obj\tm_stm32f4_spi_dma.o E:\test\Debug\Obj\Util.o -o
+#        E:\test\Debug\Exe\test.out --map E:\test\Debug\List\test.map --config
+#        E:\test\Libraries\stm32f4xx_flash.icf --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x081fffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x20000000 to 0x2002ffff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A0":                                      0x188
+  .intvec            ro code  0x08000000   0x188  startup_stm32f40_41xxx.o [1]
+                            - 0x08000188   0x188
+
+"P1":                                     0xb277
+  .text              ro code  0x08000188  0x4e94  FOD_Cleaner.o [1]
+  .text              ro code  0x0800501c    0x22  S32ToDbl.o [4]
+  .text              ro code  0x0800503e     0xa  xsprout.o [3]
+  .text              ro code  0x08005048   0x1a2  DblMul.o [4]
+  .text              ro code  0x080051ec    0x3a  DblToS32.o [4]
+  .text              ro code  0x08005228    0x2e  DblCmpGe.o [4]
+  .text              ro code  0x08005258    0x2e  DblCmpLe.o [4]
+  .text              ro code  0x08005288   0x246  DblDiv.o [4]
+  .text              ro code  0x080054d0    0x40  sprintf.o [3]
+  .text              ro code  0x08005510    0xe2  DblSub.o [4]
+  .text              ro code  0x080055f4   0x178  DblAdd.o [4]
+  .text              ro code  0x0800576c   0x704  tm_stm32f4_ili9341.o [1]
+  .text              ro code  0x08005e70    0x48  strtok.o [3]
+  .text              ro code  0x08005eb8    0x32  math_wrappers64.o [4]
+  .text              ro code  0x08005eec   0x154  system_stm32f4xx.o [1]
+  .text              ro code  0x08006040   0xbfa  xprintflarge_nomb.o [3]
+  .text              ro code  0x08006c3c   0x1c8  tm_stm32f4_gpio.o [1]
+  .text              ro code  0x08006e04     0x8  stm32f4xx_gpio.o [1]
+  .text              ro code  0x08006e0c   0x49e  tm_stm32f4_spi.o [1]
+  .text              ro code  0x080072ac   0x1bc  tm_stm32f4_spi_dma.o [1]
+  .text              ro code  0x08007468    0x22  strspn.o [3]
+  .text              ro code  0x0800748a    0x22  strcspn.o [3]
+  .rodata            const    0x080074ac     0xc  FOD_Cleaner.o [1]
+  .text              ro code  0x080074b8   0x5a0  strto64.o [4]
+  .text              ro code  0x08007a58    0xc4  acos64.o [4]
+  .text              ro code  0x08007b1c   0x44c  cos_sin64.o [4]
+  .text              ro code  0x08007f68    0x16  strchr.o [5]
+  .text              ro code  0x08007f80    0x44  xfail_s.o [3]
+  .text              ro code  0x08007fc4    0x36  strlen.o [5]
+  .text              ro code  0x08007ffc    0x58  memchr.o [5]
+  .text              ro code  0x08008054   0x22e  I64DivMod.o [5]
+  .text              ro code  0x08008284    0xa6  ABImemcpy.o [5]
+  .text              ro code  0x0800832c    0x70  frexp.o [4]
+  .text              ro code  0x0800839c    0x28  DblToU32.o [4]
+  .text              ro code  0x080083c4    0x1a  U32ToDbl.o [4]
+  .text              ro code  0x080083e0    0x64  stm32f4xx_spi.o [1]
+  .text              ro code  0x08008444   0x1da  tm_stm32f4_dma.o [1]
+  .text              ro code  0x08008620    0x58  stm32f4xx_dma.o [1]
+  .text              ro code  0x08008678   0x13a  ldexp.o [4]
+  .text              ro code  0x080087b2   0x120  iar_Stopfx.o [3]
+  .text              ro code  0x080088d4   0x1c8  iar_Stoflt.o [3]
+  .text              ro code  0x08008a9c   0x210  iar_Stoxflt.o [3]
+  .text              ro code  0x08008cac    0xf2  sqrt.o [4]
+  .text              ro code  0x08008da0   0x208  iar_Atan64.o [4]
+  .text              ro code  0x08008fa8     0x6  abort.o [3]
+  .text              ro code  0x08008fb0     0x2  I64DivZer.o [5]
+  .text              ro code  0x08008fb2     0x2  tm_stm32f4_dma.o [1]
+  .text              ro code  0x08008fb4     0x2  tm_stm32f4_dma.o [1]
+  .text              ro code  0x08008fb6     0x2  tm_stm32f4_dma.o [1]
+  .text              ro code  0x08008fb8     0x2  tm_stm32f4_dma.o [1]
+  .text              ro code  0x08008fbc    0x20  DblCmpEq.o [4]
+  .text              ro code  0x08008fdc    0x14  exit.o [6]
+  .rodata            const    0x08008ff0  0x134c  tm_stm32f4_fonts.o [1]
+  .rodata            const    0x0800a33c   0xd5c  tm_stm32f4_fonts.o [1]
+  .text              ro code  0x0800b098    0x40  zero_init3.o [5]
+  .text              ro code  0x0800b0d8    0x38  packbits_init_single.o [5]
+  .text              ro code  0x0800b110    0x28  data_init.o [5]
+  .text              ro code  0x0800b138    0x22  fpinit_M.o [4]
+  .iar.init_table    const    0x0800b15c    0x20  - Linker created -
+  .text              ro code  0x0800b17c    0x1e  cmain.o [5]
+  .text              ro code  0x0800b19a     0x4  low_level_init.o [3]
+  .text              ro code  0x0800b19e     0x4  exit.o [3]
+  .text              ro code  0x0800b1a4     0xa  cexit.o [5]
+  .text              ro code  0x0800b1b0    0x10  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b1c0     0xc  cstartup_M.o [5]
+  .rodata            const    0x0800b1cc     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b1d4     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b1dc     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b1e4     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b1ec     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b1f4     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b1fc     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b204     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b20c     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b214     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b21c     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b224     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b22c     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b234     0x8  FOD_Cleaner.o [1]
+  .rodata            const    0x0800b23c     0x4  tm_stm32f4_dma.o [1]
+  .text              ro code  0x0800b240     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b244     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b248     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b24c     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b250     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b254     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b258     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b25c     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b260     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b264     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b268     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b26c     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b270     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b274     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b278     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b27c     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b280     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b284     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b288     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b28c     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b290     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b294     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b298     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b29c     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2a0     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2a4     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2a8     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2ac     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2b0     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2b4     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2b8     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2bc     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2c0     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2c4     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2c8     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2cc     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2d0     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2d4     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2d8     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2dc     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2e0     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2e4     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2e8     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2ec     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2f0     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2f4     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2f8     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b2fc     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b300     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b304     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b308     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b30c     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b310     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b314     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b318     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b31c     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b320     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b324     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b328     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b32c     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b330     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b334     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b338     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b33c     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b340     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b344     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b348     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b34c     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b350     0x4  startup_stm32f40_41xxx.o [1]
+  .text              ro code  0x0800b354     0x4  startup_stm32f40_41xxx.o [1]
+  .rodata            const    0x0800b358     0x0  zero_init3.o [5]
+  .rodata            const    0x0800b358     0x0  packbits_init_single.o [5]
+  Initializer bytes  const    0x0800b358    0xa7  <for P2-1>
+                            - 0x0800b3ff  0xb277
+
+"P2", part 1 of 3:                          0xe4
+  P2-1                        0x20000000    0xe4  <Init block>
+    .data            inited   0x20000000     0x8  FOD_Cleaner.o [1]
+    .data            inited   0x20000008     0x8  FOD_Cleaner.o [1]
+    .data            inited   0x20000010     0x8  FOD_Cleaner.o [1]
+    .data            inited   0x20000018     0x8  FOD_Cleaner.o [1]
+    .data            inited   0x20000020     0x8  FOD_Cleaner.o [1]
+    .data            inited   0x20000028     0x8  FOD_Cleaner.o [1]
+    .data            inited   0x20000030     0x4  FOD_Cleaner.o [1]
+    .data            inited   0x20000034     0x4  FOD_Cleaner.o [1]
+    .data            inited   0x20000038     0x4  FOD_Cleaner.o [1]
+    .data            inited   0x2000003c     0x4  FOD_Cleaner.o [1]
+    .data            inited   0x20000040     0x4  FOD_Cleaner.o [1]
+    .data            inited   0x20000044     0x8  tm_stm32f4_fonts.o [1]
+    .data            inited   0x2000004c     0x8  tm_stm32f4_fonts.o [1]
+    .data            inited   0x20000054    0x18  tm_stm32f4_spi_dma.o [1]
+    .data            inited   0x2000006c    0x18  tm_stm32f4_spi_dma.o [1]
+    .data            inited   0x20000084    0x18  tm_stm32f4_spi_dma.o [1]
+    .data            inited   0x2000009c    0x18  tm_stm32f4_spi_dma.o [1]
+    .data            inited   0x200000b4    0x18  tm_stm32f4_spi_dma.o [1]
+    .data            inited   0x200000cc    0x18  tm_stm32f4_spi_dma.o [1]
+                            - 0x200000e4    0xe4
+
+"P2", part 2 of 3:                         0x4ec
+  .bss               zero     0x200000e4    0xc8  FOD_Cleaner.o [1]
+  .bss               zero     0x200001ac    0xc8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000274    0x40  FOD_Cleaner.o [1]
+  .bss               zero     0x200002b4    0x40  FOD_Cleaner.o [1]
+  .bss               zero     0x200002f4    0x3c  tm_stm32f4_spi_dma.o [1]
+  .bss               zero     0x20000330    0x14  FOD_Cleaner.o [1]
+  .bss               zero     0x20000348    0x20  FOD_Cleaner.o [1]
+  .bss               zero     0x20000368    0x20  FOD_Cleaner.o [1]
+  .bss               zero     0x20000388    0x18  tm_stm32f4_gpio.o [1]
+  .bss               zero     0x200003a0    0x14  FOD_Cleaner.o [1]
+  .bss               zero     0x200003b4    0x14  FOD_Cleaner.o [1]
+  .bss               zero     0x200003c8    0x14  FOD_Cleaner.o [1]
+  .bss               zero     0x200003dc    0x14  FOD_Cleaner.o [1]
+  .bss               zero     0x200003f0    0x14  FOD_Cleaner.o [1]
+  .bss               zero     0x20000404    0x14  FOD_Cleaner.o [1]
+  .bss               zero     0x20000418    0x14  FOD_Cleaner.o [1]
+  .bss               zero     0x2000042c    0x14  FOD_Cleaner.o [1]
+  .bss               zero     0x20000440     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000448     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000450     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000458     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000460     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000468     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000470     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000478     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000480     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000488     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000490     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000498     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004a0     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004a8     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004b0     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004b8     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004c0     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004c8     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004d0     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004d8     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004e0     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004e8     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004f0     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x200004f8     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000500     0x8  FOD_Cleaner.o [1]
+  .bss               zero     0x20000508     0x8  tm_stm32f4_ili9341.o [1]
+  .bss               zero     0x20000510     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000514     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000518     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x2000051c     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000520     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000524     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000528     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x2000052c     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000530     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000534     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000538     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x2000053c     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000540     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000544     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000548     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x2000054c     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000550     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000554     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000558     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x2000055c     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000560     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000564     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000568     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x2000056c     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000570     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000574     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000578     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x2000057c     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000580     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000584     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000588     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x2000058c     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000590     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000594     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x20000598     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x2000059c     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x200005a0     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x200005a4     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x200005a8     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x200005ac     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x200005b0     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x200005b4     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x200005b8     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x200005bc     0x4  FOD_Cleaner.o [1]
+  .bss               zero     0x200005c0     0x4  strtok.o [3]
+  .bss               zero     0x200005c4     0x4  xfail_s.o [3]
+  .bss               zero     0x200005c8     0x2  tm_stm32f4_ili9341.o [1]
+  .bss               zero     0x200005ca     0x2  tm_stm32f4_ili9341.o [1]
+  .bss               zero     0x200005cc     0x1  FOD_Cleaner.o [1]
+                            - 0x200005cd   0x4e9
+
+"P2", part 3 of 3:                         0x400
+  CSTACK                      0x200005d0   0x400  <Block>
+    CSTACK           uninit   0x200005d0   0x400  <Block tail>
+                            - 0x200009d0   0x400
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x4e9:
+          0x200000e4  0x4e9
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0xa7 (73% of destination):
+          0x0800b358   0xa7
+    1 destination range, total size 0xe4:
+          0x20000000   0xe4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                    ro code  ro data  rw data
+    ------                    -------  -------  -------
+E:\test\Debug\Obj: [1]
+    FOD_Cleaner.o              20 116      173    1 217
+    startup_stm32f40_41xxx.o      688
+    stm32f4xx_dma.o                88
+    stm32f4xx_gpio.o                8
+    stm32f4xx_spi.o               100
+    system_stm32f4xx.o            340
+    tm_stm32f4_dma.o              482        4
+    tm_stm32f4_fonts.o                   8 372       16
+    tm_stm32f4_gpio.o             456                24
+    tm_stm32f4_ili9341.o        1 796                12
+    tm_stm32f4_spi.o            1 182
+    tm_stm32f4_spi_dma.o          444      106      204
+    ---------------------------------------------------
+    Total:                     25 700    8 655    1 473
+
+command line: [2]
+    ---------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    abort.o                         6
+    exit.o                          4
+    iar_Stoflt.o                  456
+    iar_Stopfx.o                  288
+    iar_Stoxflt.o                 528
+    low_level_init.o                4
+    sprintf.o                      64
+    strcspn.o                      34
+    strspn.o                       34
+    strtok.o                       72                 4
+    xfail_s.o                      68                 4
+    xprintflarge_nomb.o         3 066
+    xsprout.o                      10
+    ---------------------------------------------------
+    Total:                      4 634                 8
+
+m7M_tls.a: [4]
+    DblAdd.o                      376
+    DblCmpEq.o                     32
+    DblCmpGe.o                     46
+    DblCmpLe.o                     46
+    DblDiv.o                      582
+    DblMul.o                      418
+    DblSub.o                      226
+    DblToS32.o                     58
+    DblToU32.o                     40
+    S32ToDbl.o                     34
+    U32ToDbl.o                     26
+    acos64.o                      196
+    cos_sin64.o                 1 100
+    fpinit_M.o                     34
+    frexp.o                       112
+    iar_Atan64.o                  520
+    ldexp.o                       314
+    math_wrappers64.o              50
+    sqrt.o                        242
+    strto64.o                   1 440
+    ---------------------------------------------------
+    Total:                      5 892
+
+rt7M_tl.a: [5]
+    ABImemcpy.o                   166
+    I64DivMod.o                   558
+    I64DivZer.o                     2
+    cexit.o                        10
+    cmain.o                        30
+    cstartup_M.o                   12
+    data_init.o                    40
+    memchr.o                       88
+    packbits_init_single.o         56
+    strchr.o                       22
+    strlen.o                       54
+    zero_init3.o                   64
+    ---------------------------------------------------
+    Total:                      1 102
+
+shb_l.a: [6]
+    exit.o                         20
+    ---------------------------------------------------
+    Total:                         20
+
+    Gaps                           42        2        4
+    Linker created                          32    1 024
+-------------------------------------------------------
+    Grand Total:               37 390    8 689    2 509
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+.iar.init_table$$Base   0x0800b15c           --   Gb  - Linker created -
+.iar.init_table$$Limit  0x0800b17c           --   Gb  - Linker created -
+?main                   0x0800b17d          Code  Gb  cmain.o [5]
+Auto_flag               0x20000548     0x4  Data  Gb  FOD_Cleaner.o [1]
+Brush_PWM               0x200005a8     0x4  Data  Gb  FOD_Cleaner.o [1]
+CSTACK$$Base            0x200005d0           --   Gb  - Linker created -
+CSTACK$$Limit           0x200009d0           --   Gb  - Linker created -
+CompareInit             0x08002a11    0x42  Code  Gb  FOD_Cleaner.o [1]
+D                       0x200003b4    0x14  Data  Gb  FOD_Cleaner.o [1]
+DMA1_Stream0_IRQHandler
+                        0x0800851f     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA1_Stream1_IRQHandler
+                        0x08008529     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA1_Stream2_IRQHandler
+                        0x08008533     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA1_Stream3_IRQHandler
+                        0x0800853d     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA1_Stream4_IRQHandler
+                        0x08008547     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA1_Stream5_IRQHandler
+                        0x08008551     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA1_Stream6_IRQHandler
+                        0x0800855b     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA1_Stream7_IRQHandler
+                        0x08008565     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA2_Stream0_IRQHandler
+                        0x0800856f     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA2_Stream1_IRQHandler
+                        0x08008579     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA2_Stream2_IRQHandler
+                        0x08008583     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA2_Stream3_IRQHandler
+                        0x0800858d     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA2_Stream4_IRQHandler
+                        0x08008597     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA2_Stream5_IRQHandler
+                        0x080085a1     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA2_Stream6_IRQHandler
+                        0x080085ab     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA2_Stream7_IRQHandler
+                        0x080085b5     0xa  Code  Gb  tm_stm32f4_dma.o [1]
+DMA_Flags_Bit_Pos       0x0800b23c     0x4  Data  Lc  tm_stm32f4_dma.o [1]
+DMA_Init                0x08008621    0x54  Code  Gb  stm32f4xx_dma.o [1]
+DMA_InitStruct          0x200002f4    0x3c  Data  Lc  tm_stm32f4_spi_dma.o [1]
+DelayMS                 0x0800410d    0x20  Code  Gb  FOD_Cleaner.o [1]
+DelayUS                 0x0800412d    0x1c  Code  Gb  FOD_Cleaner.o [1]
+Dtentox                 0x0800766d   0x19a  Code  Lc  strto64.o [4]
+EXTI15_10_IRQHandler    0x08003129    0x48  Code  Gb  FOD_Cleaner.o [1]
+Feedback_Rutin          0x08000b87    0xc2  Code  Gb  FOD_Cleaner.o [1]
+GNGGA                   0x200002b4    0x40  Data  Gb  FOD_Cleaner.o [1]
+GPIO_ResetBits          0x08006e09     0x4  Code  Gb  stm32f4xx_gpio.o [1]
+GPIO_SetBits            0x08006e05     0x4  Code  Gb  stm32f4xx_gpio.o [1]
+GPIO_UsedPins           0x20000388    0x18  Data  Lc  tm_stm32f4_gpio.o [1]
+GPS_Point               0x20000580     0x4  Data  Gb  FOD_Cleaner.o [1]
+GPS_Stop                0x20000584     0x4  Data  Gb  FOD_Cleaner.o [1]
+GPS_cut                 0x20000590     0x4  Data  Gb  FOD_Cleaner.o [1]
+I                       0x200003a0    0x14  Data  Gb  FOD_Cleaner.o [1]
+ILI9341_Opts            0x20000508     0x8  Data  Gb  tm_stm32f4_ili9341.o [1]
+ILI9341_x               0x200005c8     0x2  Data  Gb  tm_stm32f4_ili9341.o [1]
+ILI9341_y               0x200005ca     0x2  Data  Gb  tm_stm32f4_ili9341.o [1]
+I_err_dt                0x20000470     0x8  Data  Gb  FOD_Cleaner.o [1]
+LCD_cycle               0x08004271   0xbbe  Code  Gb  FOD_Cleaner.o [1]
+LCD_lnit                0x08004e31   0x14a  Code  Gb  FOD_Cleaner.o [1]
+Linear_DOWN             0x0800416f    0x26  Code  Gb  FOD_Cleaner.o [1]
+Linear_UP               0x08004149    0x26  Code  Gb  FOD_Cleaner.o [1]
+LoadInt                 0x080061d3    0x7a  Code  Lc  xprintflarge_nomb.o [3]
+NVIC_SetPriority        0x08000189    0x26  Code  Lc  FOD_Cleaner.o [1]
+NVIC_SystemReset        0x080001af    0x22  Code  Lc  FOD_Cleaner.o [1]
+New_Senser_auto_play    0x08000d15   0x316  Code  Gb  FOD_Cleaner.o [1]
+P                       0x20000330    0x14  Data  Gb  FOD_Cleaner.o [1]
+PWM_1                   0x20000030     0x4  Data  Gb  FOD_Cleaner.o [1]
+PWM_2                   0x20000034     0x4  Data  Gb  FOD_Cleaner.o [1]
+P_PWM_1                 0x2000053c     0x4  Data  Gb  FOD_Cleaner.o [1]
+P_PWM_2                 0x20000540     0x4  Data  Gb  FOD_Cleaner.o [1]
+Per_PWM_1               0x20000530     0x4  Data  Gb  FOD_Cleaner.o [1]
+Per_PWM_2               0x20000534     0x4  Data  Gb  FOD_Cleaner.o [1]
+RPM                     0x200004f0     0x8  Data  Gb  FOD_Cleaner.o [1]
+RPM_m                   0x200004f8     0x8  Data  Gb  FOD_Cleaner.o [1]
+RPM_timer_flag          0x200005b0     0x4  Data  Gb  FOD_Cleaner.o [1]
+RPM_timer_test_flag     0x200005b4     0x4  Data  Gb  FOD_Cleaner.o [1]
+Region$$Table$$Base     0x0800b15c           --   Gb  - Linker created -
+Region$$Table$$Limit    0x0800b17c           --   Gb  - Linker created -
+SPI1_DMA_INT            0x20000054    0x18  Data  Lc  tm_stm32f4_spi_dma.o [1]
+SPI2_DMA_INT            0x2000006c    0x18  Data  Lc  tm_stm32f4_spi_dma.o [1]
+SPI3_DMA_INT            0x20000084    0x18  Data  Lc  tm_stm32f4_spi_dma.o [1]
+SPI4_DMA_INT            0x2000009c    0x18  Data  Lc  tm_stm32f4_spi_dma.o [1]
+SPI5_DMA_INT            0x200000b4    0x18  Data  Lc  tm_stm32f4_spi_dma.o [1]
+SPI6_DMA_INT            0x200000cc    0x18  Data  Lc  tm_stm32f4_spi_dma.o [1]
+SPI_Init                0x080083e1    0x3e  Code  Gb  stm32f4xx_spi.o [1]
+SPI_StructInit          0x0800841f    0x26  Code  Gb  stm32f4xx_spi.o [1]
+S_flag                  0x2000057c     0x4  Data  Gb  FOD_Cleaner.o [1]
+Scale                   0x20000040     0x4  Data  Gb  FOD_Cleaner.o [1]
+SerialSendChar_4        0x08002ed9    0x14  Code  Gb  FOD_Cleaner.o [1]
+SerialSendChar_5        0x08002ec5    0x14  Code  Gb  FOD_Cleaner.o [1]
+SerialSendString_4      0x08002eed    0x16  Code  Gb  FOD_Cleaner.o [1]
+SetSysClock             0x08005f3f    0xce  Code  Lc  system_stm32f4xx.o [1]
+SystemInit              0x08005eed    0x52  Code  Gb  system_stm32f4xx.o [1]
+TIM7_IRQHandler         0x08003775   0x986  Code  Gb  FOD_Cleaner.o [1]
+TIMER1_PWM_Init         0x0800347d   0x192  Code  Gb  FOD_Cleaner.o [1]
+TIMER3_PWM_Init         0x08003219   0x238  Code  Gb  FOD_Cleaner.o [1]
+TIMER7_Init             0x08003625    0xa2  Code  Gb  FOD_Cleaner.o [1]
+TM_DMA_ClearFlag        0x08008445    0x36  Code  Gb  tm_stm32f4_dma.o [1]
+TM_DMA_GetFlags         0x0800847b    0x3c  Code  Gb  tm_stm32f4_dma.o [1]
+TM_DMA_INT_ProcessInterrupt
+                        0x080084b7    0x68  Code  Lc  tm_stm32f4_dma.o [1]
+TM_Font11x18            0x0800a33c   0xd5c  Data  Gb  tm_stm32f4_fonts.o [1]
+TM_Font16x26            0x08008ff0  0x134c  Data  Gb  tm_stm32f4_fonts.o [1]
+TM_Font_11x18           0x20000044     0x8  Data  Gb  tm_stm32f4_fonts.o [1]
+TM_Font_16x26           0x2000004c     0x8  Data  Gb  tm_stm32f4_fonts.o [1]
+TM_GPIO_GetPortSource   0x08006cff     0xa  Code  Gb  tm_stm32f4_gpio.o [1]
+TM_GPIO_INT_EnableClock
+                        0x08006d09    0x18  Code  Gb  tm_stm32f4_gpio.o [1]
+TM_GPIO_INT_Init        0x08006d21    0xd8  Code  Gb  tm_stm32f4_gpio.o [1]
+TM_GPIO_Init            0x08006c3d    0x3a  Code  Gb  tm_stm32f4_gpio.o [1]
+TM_GPIO_InitAlternate   0x08006c77    0x88  Code  Gb  tm_stm32f4_gpio.o [1]
+TM_ILI9341_Delay        0x08005c83    0x14  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_ILI9341_DrawPixel    0x08005b11    0x30  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_ILI9341_Fill         0x08005ba9    0x20  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_ILI9341_INT_Fill     0x08005bc9    0xba  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_ILI9341_Init         0x0800579d    0xa0  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_ILI9341_InitLCD      0x0800583d   0x270  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_ILI9341_Putc         0x08005d97    0xbc  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_ILI9341_Puts         0x08005d1b    0x7c  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_ILI9341_Rotate       0x08005c97    0x84  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_ILI9341_SendCommand  0x08005aad    0x32  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_ILI9341_SendData     0x08005adf    0x32  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_ILI9341_SetCursorPosition
+                        0x08005b41    0x68  Code  Gb  tm_stm32f4_ili9341.o [1]
+TM_SPI1_INT_InitPins    0x08007083    0x48  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI2_INT_InitPins    0x080070cb    0x7a  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI3_INT_InitPins    0x08007145    0x4a  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI4_INT_InitPins    0x0800718f    0x4a  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI5_INT_InitPins    0x080071d9    0x60  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI6_INT_InitPins    0x08007239    0x30  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI_DMA_INT_GetSettings
+                        0x080073f7    0x34  Code  Lc  tm_stm32f4_spi_dma.o [1]
+TM_SPI_DMA_Init         0x080072ad    0x98  Code  Gb  tm_stm32f4_spi_dma.o [1]
+TM_SPI_DMA_SendHalfWord
+                        0x08007345    0x7e  Code  Gb  tm_stm32f4_spi_dma.o [1]
+TM_SPI_DMA_Working      0x080073c3    0x34  Code  Gb  tm_stm32f4_spi_dma.o [1]
+TM_SPI_Init             0x08006e0d    0xd4  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI_Send             0x0800576d    0x30  Code  Lc  tm_stm32f4_ili9341.o [1]
+TM_SPI_SetDataSize      0x08006ee1    0x40  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPIx_Init            0x08006f21   0x162  Code  Lc  tm_stm32f4_spi.o [1]
+Turn_L_0                0x20000564     0x4  Data  Gb  FOD_Cleaner.o [1]
+Turn_L_180              0x20000550     0x4  Data  Gb  FOD_Cleaner.o [1]
+Turn_L_30               0x20000570     0x4  Data  Gb  FOD_Cleaner.o [1]
+Turn_L_45               0x2000055c     0x4  Data  Gb  FOD_Cleaner.o [1]
+Turn_L_90               0x20000554     0x4  Data  Gb  FOD_Cleaner.o [1]
+Turn_Left_0             0x0800168d    0xac  Code  Gb  FOD_Cleaner.o [1]
+Turn_Left_180           0x08001051    0xda  Code  Gb  FOD_Cleaner.o [1]
+Turn_Left_30            0x080015d9    0xaa  Code  Gb  FOD_Cleaner.o [1]
+Turn_Left_45            0x080013c1    0xb2  Code  Gb  FOD_Cleaner.o [1]
+Turn_Left_90            0x0800121d    0xca  Code  Gb  FOD_Cleaner.o [1]
+Turn_R_0                0x20000568     0x4  Data  Gb  FOD_Cleaner.o [1]
+Turn_R_180              0x2000054c     0x4  Data  Gb  FOD_Cleaner.o [1]
+Turn_R_30               0x2000056c     0x4  Data  Gb  FOD_Cleaner.o [1]
+Turn_R_45               0x20000560     0x4  Data  Gb  FOD_Cleaner.o [1]
+Turn_R_90               0x20000558     0x4  Data  Gb  FOD_Cleaner.o [1]
+Turn_Right_0            0x08001739    0xaa  Code  Gb  FOD_Cleaner.o [1]
+Turn_Right_180          0x0800113d    0xda  Code  Gb  FOD_Cleaner.o [1]
+Turn_Right_30           0x08001529    0xaa  Code  Gb  FOD_Cleaner.o [1]
+Turn_Right_45           0x08001479    0xaa  Code  Gb  FOD_Cleaner.o [1]
+Turn_Right_90           0x080012f1    0xca  Code  Gb  FOD_Cleaner.o [1]
+UART4_BRR_Configuration
+                        0x08003005    0x70  Code  Gb  FOD_Cleaner.o [1]
+UART4_IRQHandler        0x08001e71   0x820  Code  Gb  FOD_Cleaner.o [1]
+UART4_Init              0x08002ae1   0x11a  Code  Gb  FOD_Cleaner.o [1]
+UART5_BRR_Configuration
+                        0x08002f95    0x70  Code  Gb  FOD_Cleaner.o [1]
+UART5_IRQHandler        0x08001b95   0x238  Code  Gb  FOD_Cleaner.o [1]
+UART5_Init              0x08002c35   0x144  Code  Gb  FOD_Cleaner.o [1]
+USART1_Init             0x080017e9   0x11a  Code  Gb  FOD_Cleaner.o [1]
+USART2_BRR_Configuration
+                        0x08003171    0x70  Code  Gb  FOD_Cleaner.o [1]
+USART2_IRQHandler       0x080026d5   0x320  Code  Gb  FOD_Cleaner.o [1]
+USART2_Init             0x08002d81   0x144  Code  Gb  FOD_Cleaner.o [1]
+USART_BRR_Configuration
+                        0x08002f03    0x70  Code  Gb  FOD_Cleaner.o [1]
+Z_data                  0x20000440     0x8  Data  Gb  FOD_Cleaner.o [1]
+Z_deg                   0x20000448     0x8  Data  Gb  FOD_Cleaner.o [1]
+_EXTI_Init              0x08003075    0x9e  Code  Gb  FOD_Cleaner.o [1]
+_GPIO_Init              0x08002a53    0x68  Code  Gb  FOD_Cleaner.o [1]
+_GenldLargeNoMb         0x08006975   0x230  Code  Lc  xprintflarge_nomb.o [3]
+_LdtobLargeNoMb         0x0800670d   0x240  Code  Lc  xprintflarge_nomb.o [3]
+_LitobLargeNoMb         0x080065b5   0x112  Code  Lc  xprintflarge_nomb.o [3]
+_PrintfLargeNoMb        0x08006041   0x18c  Code  Gb  xprintflarge_nomb.o [3]
+_PutcharsLargeNoMb      0x08006ba5    0x2e  Code  Lc  xprintflarge_nomb.o [3]
+_PutfldLargeNoMb        0x0800624d   0x25c  Code  Lc  xprintflarge_nomb.o [3]
+_PuttxtLargeNoMb        0x080064a9   0x10c  Code  Lc  xprintflarge_nomb.o [3]
+_SProut                 0x0800503f     0xa  Code  Gb  xsprout.o [3]
+_Strtok_ssave           0x200005c0     0x4  Data  Lc  strtok.o [3]
+__aeabi_cdcmpeq         0x08008fbd          Code  Gb  DblCmpEq.o [4]
+__aeabi_cdcmple         0x08005259          Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple        0x08005229          Code  Gb  DblCmpGe.o [4]
+__aeabi_d2iz            0x080051ed          Code  Gb  DblToS32.o [4]
+__aeabi_d2uiz           0x0800839d          Code  Gb  DblToU32.o [4]
+__aeabi_dadd            0x080055f5          Code  Gb  DblAdd.o [4]
+__aeabi_ddiv            0x08005289          Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x08005049          Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x08005511          Code  Gb  DblSub.o [4]
+__aeabi_i2d             0x0800501d          Code  Gb  S32ToDbl.o [4]
+__aeabi_ldiv0           0x08008fb1          Code  Gb  I64DivZer.o [5]
+__aeabi_memcpy          0x08008285          Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy4         0x080082a5          Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy8         0x080082a5          Code  Gb  ABImemcpy.o [5]
+__aeabi_ui2d            0x080083c5          Code  Gb  U32ToDbl.o [4]
+__aeabi_uldivmod        0x08008055          Code  Gb  I64DivMod.o [5]
+__cmain                 0x0800b17d          Code  Gb  cmain.o [5]
+__exit                  0x08008fdd    0x14  Code  Gb  exit.o [6]
+__iar_Atan64            0x08008da1   0x170  Code  Gb  iar_Atan64.o [4]
+__iar_Fail_s            0x08007f81    0x1e  Code  Gb  xfail_s.o [3]
+__iar_Memchr            0x08007ffd          Code  Gb  memchr.o [5]
+__iar_Sin64             0x08007b1d   0x3b2  Code  Lc  cos_sin64.o [4]
+__iar_Sto64             0x08007819   0x1a6  Code  Gb  strto64.o [4]
+__iar_Stoflt            0x080088d5   0x1c8  Code  Gb  iar_Stoflt.o [3]
+__iar_Stopfx            0x080087b3   0x120  Code  Gb  iar_Stopfx.o [3]
+__iar_Stoxflt           0x08008a9d   0x1da  Code  Gb  iar_Stoxflt.o [3]
+__iar_Stoxflt::digits   0x08008c7c    0x18  Data  Lc  iar_Stoxflt.o [3]
+__iar_Stoxflt::vals     0x08008c94    0x18  Data  Lc  iar_Stoxflt.o [3]
+__iar_Strchr            0x08007f69          Code  Gb  strchr.o [5]
+__iar_acos64            0x08007a59    0xc4  Code  Gb  acos64.o [4]
+__iar_cos64             0x08007f61     0x4  Code  Gb  cos_sin64.o [4]
+__iar_cos_medium        0x08007f61     0x4  Code  Gb  cos_sin64.o [4]
+__iar_cos_medium64      0x08007f61     0x4  Code  Gb  cos_sin64.o [4]
+__iar_cos_mediuml       0x08007f61     0x4  Code  Gb  cos_sin64.o [4]
+__iar_dadd              0x08005521          Code  Gb  DblSub.o [4]
+__iar_data_init3        0x0800b111    0x28  Code  Gb  data_init.o [5]
+__iar_dsub              0x08005605          Code  Gb  DblAdd.o [4]
+__iar_dsubStart         0x08005617          Code  Gb  DblAdd.o [4]
+__iar_frexp             0x08008339          Code  Gb  frexp.o [4]
+__iar_frexpl            0x08008339          Code  Gb  frexp.o [4]
+__iar_init_vfp          0x0800b139          Code  Gb  fpinit_M.o [4]
+__iar_ldexp64           0x08008679          Code  Gb  ldexp.o [4]
+__iar_packbits_init_single3
+                        0x0800b0d9    0x38  Code  Gb  packbits_init_single.o [5]
+__iar_program_start     0x0800b1c1          Code  Gb  cstartup_M.o [5]
+__iar_scalbln64         0x08008679          Code  Gb  ldexp.o [4]
+__iar_scalbn64          0x08008679          Code  Gb  ldexp.o [4]
+__iar_sin64             0x08007f65     0x4  Code  Gb  cos_sin64.o [4]
+__iar_sin_medium        0x08007f65     0x4  Code  Gb  cos_sin64.o [4]
+__iar_sin_medium64      0x08007f65     0x4  Code  Gb  cos_sin64.o [4]
+__iar_sin_mediuml       0x08007f65     0x4  Code  Gb  cos_sin64.o [4]
+__iar_softfp___iar_frexp64
+                        0x0800832d          Code  Gb  frexp.o [4]
+__iar_softfp_frexp      0x0800832d          Code  Gb  frexp.o [4]
+__iar_softfp_frexpl     0x0800832d          Code  Gb  frexp.o [4]
+__iar_sqrt64            0x08008cad          Code  Gb  sqrt.o [4]
+__iar_systems$$module {Abs}
+                        0x00000001          Data  Gb  command line/config [2]
+__iar_vfp_acos          0x08005ec7     0xc  Code  Gb  math_wrappers64.o [4]
+__iar_vfp_atof          0x08005ebf     0x8  Code  Gb  math_wrappers64.o [4]
+__iar_vfp_cos           0x08005ed3     0xc  Code  Gb  math_wrappers64.o [4]
+__iar_vfp_sin           0x08005edf     0xc  Code  Gb  math_wrappers64.o [4]
+__iar_zero_init3        0x0800b099    0x40  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0800b19b     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000          Data  Gb  startup_stm32f40_41xxx.o [1]
+_call_main              0x0800b189          Code  Gb  cmain.o [5]
+_exit                   0x0800b1a5          Code  Gb  cexit.o [5]
+_main                   0x0800b197          Code  Gb  cmain.o [5]
+a                       0x08008f68    0x40  Data  Lc  iar_Atan64.o [4]
+abort                   0x08008fa9     0x6  Code  Gb  abort.o [3]
+acos                    0x08007a59    0xc4  Code  Gb  acos64.o [4]
+acosl                   0x08007a59    0xc4  Code  Gb  acos64.o [4]
+angle_PID               0x0800194d   0x228  Code  Gb  FOD_Cleaner.o [1]
+atof                    0x08007a05     0x8  Code  Gb  strto64.o [4]
+ch4                     0x200005cc     0x1  Data  Gb  FOD_Cleaner.o [1]
+check_p                 0x200005a0     0x4  Data  Gb  FOD_Cleaner.o [1]
+cos                     0x08007f61     0x4  Code  Gb  cos_sin64.o [4]
+cosl                    0x08007f61     0x4  Code  Gb  cos_sin64.o [4]
+count                   0x20000510     0x4  Data  Gb  FOD_Cleaner.o [1]
+ctr_PWM                 0x20000490     0x8  Data  Gb  FOD_Cleaner.o [1]
+cycle_Turm              0x200004e8     0x8  Data  Gb  FOD_Cleaner.o [1]
+d_err                   0x20000478     0x8  Data  Gb  FOD_Cleaner.o [1]
+ddiv                    0x0800758d    0xd0  Code  Lc  strto64.o [4]
+delay                   0x2000003c     0x4  Data  Gb  FOD_Cleaner.o [1]
+dmul                    0x080074b9    0xd2  Code  Lc  strto64.o [4]
+dt                      0x20000018     0x8  Data  Gb  FOD_Cleaner.o [1]
+err                     0x20000450     0x8  Data  Gb  FOD_Cleaner.o [1]
+exit                    0x0800b19f     0x4  Code  Gb  exit.o [3]
+feedback_flag           0x200005b8     0x4  Data  Gb  FOD_Cleaner.o [1]
+g_radians_latitude      0x200004b8     0x8  Data  Gb  FOD_Cleaner.o [1]
+g_radians_longtitude    0x200004c0     0x8  Data  Gb  FOD_Cleaner.o [1]
+goal_PWM                0x20000574     0x4  Data  Gb  FOD_Cleaner.o [1]
+i                       0x20000594     0x4  Data  Gb  FOD_Cleaner.o [1]
+index                   0x20000038     0x4  Data  Gb  FOD_Cleaner.o [1]
+index_flag              0x200005bc     0x4  Data  Gb  FOD_Cleaner.o [1]
+ldexp                   0x08008679          Code  Gb  ldexp.o [4]
+ldexpl                  0x08008679          Code  Gb  ldexp.o [4]
+main                    0x080001d1   0x9b6  Code  Gb  FOD_Cleaner.o [1]
+map                     0x0800191d    0x18  Code  Gb  FOD_Cleaner.o [1]
+map_int                 0x08001935    0x18  Code  Gb  FOD_Cleaner.o [1]
+memchr                  0x08007ffd          Code  Gb  memchr.o [5]
+pid_Kd                  0x20000010     0x8  Data  Gb  FOD_Cleaner.o [1]
+pid_Kd_term             0x20000468     0x8  Data  Gb  FOD_Cleaner.o [1]
+pid_Ki                  0x20000008     0x8  Data  Gb  FOD_Cleaner.o [1]
+pid_Ki_term             0x20000460     0x8  Data  Gb  FOD_Cleaner.o [1]
+pid_Kp                  0x20000000     0x8  Data  Gb  FOD_Cleaner.o [1]
+pid_Kp_term             0x20000458     0x8  Data  Gb  FOD_Cleaner.o [1]
+pid_control             0x20000480     0x8  Data  Gb  FOD_Cleaner.o [1]
+point                   0x2000059c     0x4  Data  Gb  FOD_Cleaner.o [1]
+pows                    0x08007a10    0x48  Data  Lc  strto64.o [4]
+prev_err                0x20000488     0x8  Data  Gb  FOD_Cleaner.o [1]
+radians_latitude        0x200004a8     0x8  Data  Gb  FOD_Cleaner.o [1]
+radians_longtitude      0x200004b0     0x8  Data  Gb  FOD_Cleaner.o [1]
+radians_space           0x200004c8     0x8  Data  Gb  FOD_Cleaner.o [1]
+real_check_flag         0x20000588     0x4  Data  Gb  FOD_Cleaner.o [1]
+real_space_H            0x200004d0     0x8  Data  Gb  FOD_Cleaner.o [1]
+real_space_Turm         0x200004e0     0x8  Data  Gb  FOD_Cleaner.o [1]
+real_space_V            0x200004d8     0x8  Data  Gb  FOD_Cleaner.o [1]
+rpm                     0x200005ac     0x4  Data  Gb  FOD_Cleaner.o [1]
+rx_buf                  0x200001ac    0xc8  Data  Lc  FOD_Cleaner.o [1]
+rx_cnt                  0x2000058c     0x4  Data  Gb  FOD_Cleaner.o [1]
+save_RPM_m              0x20000500     0x8  Data  Gb  FOD_Cleaner.o [1]
+save_latitude           0x20000348    0x20  Data  Gb  FOD_Cleaner.o [1]
+save_longtitude         0x20000368    0x20  Data  Gb  FOD_Cleaner.o [1]
+save_p                  0x20000598     0x4  Data  Gb  FOD_Cleaner.o [1]
+save_pwm                0x20000538     0x4  Data  Gb  FOD_Cleaner.o [1]
+scalbln                 0x08008679          Code  Gb  ldexp.o [4]
+scalblnl                0x08008679          Code  Gb  ldexp.o [4]
+scalbn                  0x08008679          Code  Gb  ldexp.o [4]
+scalbnl                 0x08008679          Code  Gb  ldexp.o [4]
+scale                   0x080066c7    0x46  Code  Lc  xprintflarge_nomb.o [3]
+sec_hand                0x200005c4     0x4  Data  Lc  xfail_s.o [3]
+senser_delay            0x20000520     0x4  Data  Gb  FOD_Cleaner.o [1]
+senser_delay_flag       0x20000524     0x4  Data  Gb  FOD_Cleaner.o [1]
+senser_flag             0x2000051c     0x4  Data  Gb  FOD_Cleaner.o [1]
+senser_play             0x20000514     0x4  Data  Gb  FOD_Cleaner.o [1]
+senser_time             0x20000518     0x4  Data  Gb  FOD_Cleaner.o [1]
+sin                     0x08007f65     0x4  Code  Gb  cos_sin64.o [4]
+sinl                    0x08007f65     0x4  Code  Gb  cos_sin64.o [4]
+speed_flag              0x20000544     0x4  Data  Gb  FOD_Cleaner.o [1]
+sprintf                 0x080054d1    0x40  Code  Gb  sprintf.o [3]
+sqrt                    0x08008cad          Code  Gb  sqrt.o [4]
+sqrtl                   0x08008cad          Code  Gb  sqrt.o [4]
+start_flag              0x200005a4     0x4  Data  Gb  FOD_Cleaner.o [1]
+str                     0x200003c8    0x14  Data  Gb  FOD_Cleaner.o [1]
+str2                    0x200003dc    0x14  Data  Gb  FOD_Cleaner.o [1]
+str3                    0x200003f0    0x14  Data  Gb  FOD_Cleaner.o [1]
+str5                    0x20000404    0x14  Data  Gb  FOD_Cleaner.o [1]
+str6                    0x20000418    0x14  Data  Gb  FOD_Cleaner.o [1]
+str_RPM                 0x2000042c    0x14  Data  Gb  FOD_Cleaner.o [1]
+strchr                  0x08007f69          Code  Gb  strchr.o [5]
+strcspn                 0x0800748b    0x22  Code  Gb  strcspn.o [3]
+strlen                  0x08007fc5          Code  Gb  strlen.o [5]
+strspn                  0x08007469    0x22  Code  Gb  strspn.o [3]
+strtok                  0x08005e71    0x48  Code  Gb  strtok.o [3]
+sum                     0x20000498     0x8  Data  Gb  FOD_Cleaner.o [1]
+sum2                    0x200004a0     0x8  Data  Gb  FOD_Cleaner.o [1]
+system_time             0x20000578     0x4  Data  Gb  FOD_Cleaner.o [1]
+test_m                  0x20000020     0x8  Data  Gb  FOD_Cleaner.o [1]
+test_mv                 0x20000028     0x8  Data  Gb  FOD_Cleaner.o [1]
+yaw_Z                   0x20000274    0x40  Data  Gb  FOD_Cleaner.o [1]
+yaw_cnt                 0x20000528     0x4  Data  Gb  FOD_Cleaner.o [1]
+yaw_cut                 0x2000052c     0x4  Data  Gb  FOD_Cleaner.o [1]
+yaw_data                0x200000e4    0xc8  Data  Lc  FOD_Cleaner.o [1]
+
+
+[1] = E:\test\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  37 390 bytes of readonly  code memory
+   8 689 bytes of readonly  data memory
+   2 509 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

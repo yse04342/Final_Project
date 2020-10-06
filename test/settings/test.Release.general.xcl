@@ -1,0 +1,13 @@
+"D:\MCU\arm\bin\armproc.dll" 
+
+"D:\MCU\arm\bin\armsim2.dll" 
+
+"C:\Users\은동영\Desktop\졸작\test\Release\Exe\test.out" 
+
+--plugin="D:\MCU\arm\bin\armbat.dll" 
+
+--device_macro="D:\MCU\arm\config\debugger\ST\STM32F4xx.dmac" 
+
+
+
+
